@@ -1,1 +1,182 @@
-hello world
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <meta name="robots" content="index,follow" />
+
+  <title> Portspoof -  About </title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Protect your system services from port scanners, by slowing them down and feeding with bogus information. The service signature obfuscator - portspoof."/>
+  <meta name="keywords" content="port scanning, spoofing, spoof"/>
+  <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon" />
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/layout.css">
+  <link rel="stylesheet" href="stylesheets/custom.css">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12466584-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="sixteen columns navbar">
+  <h1 class="remove-bottom" ># Portspoof  </h1> 
+</div>
+
+<div class='sixteen columns navlinks'>
+<ul>
+<li><a  href="#about">About</a> 
+</li>
+<li><a  href="https://github.com/drk1wi/portspoof/archive/master.zip">Download</a> 
+</li>
+<li><a  href="#features">Features</a> 
+</li>
+<li><a  href="#license">License & Log</a> 
+</li>
+<li><a  href="https://github.com/drk1wi/portspoof/blob/master/DOCS">Documentation</a> 
+</li>
+</ul>
+</div>
+
+<div class="twelve columns offset-by-one content">
+          &nbsp;
+
+<div class="doc-section" id="about">
+
+<h3 >About Portspoof</h3>
+
+<h5><strong>Art of Annoyance and Camouflage</strong></h5>
+
+<p>The Portspoof program primary goal is to enhance OS security through a set of techniques that will slow down and keep your attackers out from staying low profile during their reconnaissance against your system(s).</p>
+<p>By default the attacker's reconnaissance phase should be time consuming and easily detectable by your intrusion detection systems...</p>
+
+<h5><strong>Art of Active (Offensive) Defense</strong></h5>
+<p>Portspoof can be also used as an 'Exploitation Framework Frontend', that turns your system into responsive and aggressive machine. In practice this means that your server will be able to exploit your attackers' tools and exploits in an automated manner. This approach is purely based on Active (Offensive) Defense concepts.</p>
+
+<p>Portspoof is meant to be lightweight, configurable, fast and secure (if it's not - please let me know) </p>
+
+<hr class="large" />
+<div class="doc-section">
+<h3>Screenshots</h3>
+<h4>Nmap port scanning results (only one service is real):</h4>
+<a href="media/nmap_scan.jpg"><img width="523"  src='media/nmap_scan.jpg'></img></a>
+</div>
+
+<hr class="large" />
+<h3>Videos</h3>
+<div class="doc-section">
+<h4>Nmap scan against system protected by Portspoof:</h4>
+<iframe width="523" height="294" src="http://www.youtube.com/embed/oDBvXSMf3wU?wmode=transparent&rel=0" frameborder="0" allowfullscreen></iframe>
+</p>
+<h4>Exploiting your attackers automated exploit scripts with Portspoof:</h4>
+<iframe width="523" height="294" src="http://www.youtube.com/embed/YDnwqy7a1zk?wmode=transparent&rel=0" frameborder="0" allowfullscreen></iframe>
+</p>
+<h4>Exploiting your attackers Nmap NSE script with Portspoof:</h4>
+<iframe width="523" height="294" src="http://www.youtube.com/embed/iyTmxRUaQ8M?wmode=transparent&rel=0" frameborder="0" allowfullscreen></iframe>
+</p>
+
+</div>
+
+<hr class="large" />
+<div class="doc-section" id="features">
+<h3>Features</h3>
+<p><h5> The most important features that Portspoof has: </h5></p>
+<p>
+- Portspoof is a userland software and does not require root privileges ! </br>
+- Binds to just one tcp port per a running instance </br>
+- Easily customizable through iptables rules </br>
+- Marginal CPU/memory usage (multithreaded) </br>
+- More than 8000 dynamic service signatures are supported ! </br>
+- Will help you to automate your Active Defense attacks against your attackers tools and scripts</br> 
+</p>
+Check out the <a  href="https://github.com/drk1wi/portspoof/blob/master/DOCS">documentation</a>  page for further details.
+</p> 
+</div>
+
+
+<hr class="large"/>
+<h3>Log</h3>
+<div class="doc-section" id="license">
+<p> For full log details please visit <a href='https://github.com/drk1wi/portspoof/blob/master/ChangeLog'>https://github.com/drk1wi/portspoof</a></p>
+<p>
+
+<strong>1.0 -  02/08/2013 - Linux</strong></br>
+* Major release. </br>
+* Ported to C++. </br>
+* Example NMAP NSE exploit, McAffe UTF7 XSS, etc. exploits added . </br>
+* Fuzzer functionality added.</br>
+* Many minor improvements and enhancements have been made</br>
+</br>
+<strong>0.3 - 28/09/2012 - Linux </strong> </br>
+* Configuration file support. </br>
+* Minor bug fixes and improvements. </br>
+* Droppped BSD support due to time constraints (will resume in future - maybe).</br>
+* 8000 port signatures supported </br>
+</br>
+<strong>0.2 - 11/08/2012 - Linux/BSD </strong></br>
+Note: BSD implementation is still experimental </br>
+* Alerts can be logged for further investigation. </br>
+* Fixed BSD startup bug. </br>
+* Automake files fixed. </br>
+* Other minor bugs fixed. </br>
+</br>
+<strong>0.1 - 02/08/2012 - Linux/BSD</strong></br>
+* First stable release for Linux.</br>
+* Multithreaded.</br>
+* 1866 port signatures supported.</br>
+</p>
+</div>
+
+<hr class="large" />
+<div class="doc-section">
+<h3>License</h3>
+<p>Portspoof is a free software distributed under GNU GPL version 2 license. <p>All the relevant details can be found <a href="https://github.com/drk1wi/portspoof/blob/master/COPYING">here</a></p>
+<h5>Project support</h5></br>
+<strong>BitCoin:</strong> 1HJPAM3f2GXj9SKV8rwaeF1v4LfGpFN147</br>
+<strong>LiteCoin:</strong> LaqYPzqf7m6Thfn3znq1sszjJvX9QeaVdd</br>
+</div>
+          &nbsp;
+
+</div>
+<hr class="large" />
+<div class='twelve columns offset-by-one'><p><citie>Portspoof - Piotr [at] Duszynski.eu PGP <a href="media/pduszynski.asc">key</a> @2012 All rights reserved </citie></p>
+
+</div>
+
+</div>
+
+</body>
+</html>
