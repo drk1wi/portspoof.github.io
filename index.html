@@ -60,6 +60,8 @@
 <ul>
 <li><a  href="#about">About</a> 
 </li>
+<li><a  href="https://github.com/drk1wi/portspoof/">Repo</a> 
+</li>
 <li><a  href="https://github.com/drk1wi/portspoof/archive/master.zip">Download</a> 
 </li>
 <li><a  href="#features">Features</a> 
@@ -78,15 +80,43 @@
 
 <h3 >About Portspoof</h3>
 
-<h5><strong>Art of Annoyance and Camouflage</strong></h5>
+<p> The Portspoof program primary goal is to enhance OS security through a set of new techniques:</p>
 
-<p>The Portspoof program primary goal is to enhance OS security through a set of techniques that will slow down and keep your attackers out from staying low profile during their reconnaissance against your system(s).</p>
-<p>By default the attacker's reconnaissance phase should be time consuming and easily detectable by your intrusion detection systems...</p>
+  <ul class="square"><li>
+  <strong>All TCP ports are always open</strong>
+  </ul></li>
 
-<h5><strong>Art of Active (Offensive) Defense</strong></h5>
-<p>Portspoof can be also used as an 'Exploitation Framework Frontend', that turns your system into responsive and aggressive machine. In practice this means that your server will be able to exploit your attackers' tools and exploits in an automated manner. This approach is purely based on Active (Offensive) Defense concepts.</p>
+  <p>Instead of informing an attacker that a particular port is CLOSED or FILTERED a system with Portspoof will return SYN+ACK for every port connection attempt.</p>
 
-<p>Portspoof is meant to be lightweight, configurable, fast and secure (if it's not - please let me know) </p>
+  <p>As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN.
+  Therefore, it difficult to determine if a valid software is listening on a particular port by just sweeping through a particular port range (check out the screenshots).</p>
+  <ul class="square"><li>
+  <strong>Every open TCP port emulates a services</strong>
+  </ul></li>
+
+  <p>Portspoof has a huge dynamic service signature database, that will be used to generate valid service signatures and feed them to your offenders scanning software.</p>
+
+  <p>Scanning software usually tries to determine a service version that is running on an open port. This step is mandatory if one would want to identify port numbers on which you are running your services on a system behing the Portspoof.
+  For this reason Portspoof will respond to every service probe with a valid service signature, that is dynamically generated based on a service signature regular expression database. </p>
+  <p>As a result an attacker will not be able to determine which port numbers your system is truly using. </p>
+
+<h5><strong>Reverse exploitation with Portspoof:</strong></h5>
+<p>Portspoof can be used as an 'Exploitation Framework Frontend', that turns your system into responsive and aggressive machine. In practice this usually means exploiting your attackers' tools and exploits. </p>
+<p>At the moment there are few example exploits in the configuration file (portspoof.conf)</p>
+
+<h5><strong>Overview:</strong></h5>
+
+<p>Portspoof is meant to be a lightweight, fast, portable and secure addition to the any firewall system or security system.
+The general goal of the program is to make the reconessaince phase slow and bothersome for your attackers as much it is only possible.
+This is quite a change to the standard 5s Nmap scan, that will give a full view of your systems running services.</p>
+
+  <p>By using all of the above mentioned techniques together:</br>
+    <ul class="square">
+  <li>your attackers will have a tough time while trying to identify all of your listening services.</li>
+  <li>the only way to determine if a service is emulated is through a protocol probe (imagine probing protocols for 65k open ports!).</li>
+  <li>it takes more than 8 hours and 200MB of sent data in order to get all of the service banners for your system ( nmap -sV -p - equivalent).</li>
+  </ul>
+
 
 <hr class="large" />
 <div class="doc-section">
@@ -117,10 +147,9 @@
 <p>
 - Portspoof is a userland software and does not require root privileges ! </br>
 - Binds to just one tcp port per a running instance </br>
-- Easily customizable through iptables rules </br>
+- Easily customizable through your iptables rules </br>
 - Marginal CPU/memory usage (multithreaded) </br>
-- More than 8000 dynamic service signatures are supported ! </br>
-- Will help you to automate your Active Defense attacks against your attackers tools and scripts</br> 
+- More than 9000 dynamic service signatures are supported ! </br>
 </p>
 Check out the <a  href="https://github.com/drk1wi/portspoof/blob/master/DOCS">documentation</a>  page for further details.
 </p> 
@@ -133,6 +162,12 @@ Check out the <a  href="https://github.com/drk1wi/portspoof/blob/master/DOCS">do
 <p> For full log details please visit <a href='https://github.com/drk1wi/portspoof/blob/master/ChangeLog'>https://github.com/drk1wi/portspoof</a></p>
 <p>
 
+<strong>1.1 -  1/01/2014 - Linux</strong></br>
+* Minor release.</br>
+* Updated reverse regular expression generation engine (used for generting bogus service signatures). </br>
+* Over 9000 service signatures in the portspoof_signatures file.. </br>
+* Better memory management.</br>
+</br>
 <strong>1.0 -  02/08/2013 - Linux</strong></br>
 * Major release. </br>
 * Ported to C++. </br>
@@ -164,9 +199,17 @@ Note: BSD implementation is still experimental </br>
 <div class="doc-section">
 <h3>License</h3>
 <p>Portspoof is a free software distributed under GNU GPL version 2 license. <p>All the relevant details can be found <a href="https://github.com/drk1wi/portspoof/blob/master/COPYING">here</a></p>
-<h5>Project support</h5></br>
-<strong>BitCoin:</strong> 1HJPAM3f2GXj9SKV8rwaeF1v4LfGpFN147</br>
-<strong>LiteCoin:</strong> LaqYPzqf7m6Thfn3znq1sszjJvX9QeaVdd</br>
+
+<hr class="large" />
+<div class="doc-section">
+<h3>Project support</h3></br>
+
+<strong>DogeCoin:</strong>DQiFbhbXDQ1VWR5qUPi8f6ECdn1Do45LuB</br> <img src='http://readwrite.com/files/dogecoin.jpg'></img>
+<strong>BitCoin:</strong>17gfBSbWeREEkyyA8F6V7v5ruFksxqnhBD</br>
+<strong>LiteCoin:</strong>LPWMSPQv6J9zYQ7jRq7ZPv21TsoMHMnKKR</br>
+</br>
+<p><strong>If you like the soft a beer would be much appreciated ;)</strong></p>
+
 </div>
           &nbsp;
 
