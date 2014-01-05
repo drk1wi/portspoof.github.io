@@ -89,14 +89,14 @@
   <p>Instead of informing an attacker that a particular port is CLOSED or FILTERED a system with Portspoof will return SYN+ACK for every port connection attempt.</p>
 
   <p>As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN.
-  Therefore, it difficult to determine if a valid software is listening on a particular port by just sweeping through a particular port range (check out the screenshots).</p>
+  With this approach it is really difficult to determine if a valid software is listening on a particular port (check out the screenshots).</p>
   <ul class="square"><li>
   <strong>Every open TCP port emulates a services</strong>
   </ul></li>
 
-  <p>Portspoof has a huge dynamic service signature database, that will be used to generate valid service signatures and feed them to your offenders scanning software.</p>
+  <p>Portspoof has a huge dynamic service signature database, that will be used to generate responses to your offenders scanning software service probes.</p>
 
-  <p>Scanning software usually tries to determine a service version that is running on an open port. This step is mandatory if one would want to identify port numbers on which you are running your services on a system behing the Portspoof.
+  <p>Scanning software usually tries to determine a service that is running on an open port. This step is mandatory if one would want to identify port numbers on which you are running your services on a system behind the Portspoof.
   For this reason Portspoof will respond to every service probe with a valid service signature, that is dynamically generated based on a service signature regular expression database. </p>
   <p>As a result an attacker will not be able to determine which port numbers your system is truly using. </p>
 
@@ -204,7 +204,7 @@ Note: BSD implementation is still experimental </br>
 <div class="doc-section">
 <h3>Project support</h3></br>
 
-<strong>DogeCoin:</strong>DQiFbhbXDQ1VWR5qUPi8f6ECdn1Do45LuB</br> <img src='http://readwrite.com/files/dogecoin.jpg'></img>
+<strong>DogeCoin:</strong>DQiFbhbXDQ1VWR5qUPi8f6ECdn1Do45LuB</br>
 <strong>BitCoin:</strong>17gfBSbWeREEkyyA8F6V7v5ruFksxqnhBD</br>
 <strong>LiteCoin:</strong>LPWMSPQv6J9zYQ7jRq7ZPv21TsoMHMnKKR</br>
 </br>
