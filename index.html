@@ -10,9 +10,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="index,follow" />
 
-  <title> Portspoof -  About </title>
+  <title> Portspoof -  A new approach to fight back port and service scanners.</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="description" content="Protect your system services from port scanners, by slowing them down and feeding with bogus information. The service signature obfuscator - portspoof."/>
+  <meta name="description" content="Mangle your attackers' port scan results effectively. "/>
   <meta name="keywords" content="port scanning, spoofing, spoof"/>
   <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon" />
 
@@ -79,30 +79,33 @@
 <div class="doc-section" id="about">
 
 <h3 >About Portspoof</h3>
+<br>
 
-<p> The Portspoof program primary goal is to enhance OS security through a set of new techniques:</p>
+<p> The Portspoof program primary goal is to enhance your systems security through a set of new camouflage techniques. As a result of applying them your attackers' port scan result will become entirely mangled and to very significant extent meaningless.   </p>
+<strong>Techniques used to achieve this:</strong>
+  <br>  <br>
 
   <ul class="square"><li>
-  <strong>All TCP ports are always open</strong>
+  <strong>All configured TCP ports are always open</strong>
   </ul></li>
 
-  <p>Instead of informing an attacker that a particular port is CLOSED or FILTERED a system with Portspoof will return SYN+ACK for every port connection attempt.</p>
+  <p>Instead of informing an attacker that a particular port is in a CLOSED or FILTERED state a system running Portspoof will return SYN+ACK for every connection attempt.</p>
 
-  <p>As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN.
+  <p><u>Result</u>: As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN.
   With this approach it is really difficult to determine if a valid software is listening on a particular port (check out the screenshots).</p>
   <ul class="square"><li>
-  <strong>Every open TCP port emulates a services</strong>
+  <strong>Every open TCP port emulates a valid services</strong>
   </ul></li>
 
   <p>Portspoof has a huge dynamic service signature database, that will be used to generate responses to your offenders scanning software service probes.</p>
 
   <p>Scanning software usually tries to determine a service that is running on an open port. This step is mandatory if one would want to identify port numbers on which you are running your services on a system behind the Portspoof.
   For this reason Portspoof will respond to every service probe with a valid service signature, that is dynamically generated based on a service signature regular expression database. </p>
-  <p>As a result an attacker will not be able to determine which port numbers your system is truly using. </p>
+  <p><u>Result</u>: As a result an attacker will not be able to determine which port numbers your system is truly using. </p>
 
 <h5><strong>Reverse exploitation with Portspoof:</strong></h5>
 <p>Portspoof can be used as an 'Exploitation Framework Frontend', that turns your system into responsive and aggressive machine. In practice this usually means exploiting your attackers' tools and exploits. </p>
-<p>At the moment there are few example exploits in the configuration file (portspoof.conf)</p>
+<p>At the moment there are few example exploits in the configuration file (portspoof.conf). One of them exploits Nmap 6.25 default script.</p>
 
 <h5><strong>Overview:</strong></h5>
 
@@ -121,7 +124,7 @@ This is quite a change to the standard 5s Nmap scan, that will give a full view 
 <hr class="large" />
 <div class="doc-section">
 <h3>Screenshots</h3>
-<h4>Nmap port scanning results (only one service is real):</h4>
+<h4>Nmap port scan results for TCP ports 1:65353 (only one service is real):</h4>
 <a href="media/nmap_scan.jpg"><img width="523"  src='media/nmap_scan.jpg'></img></a>
 </div>
 
@@ -201,6 +204,19 @@ Note: BSD implementation is still experimental </br>
 <p>Portspoof is a free software distributed under GNU GPL version 2 license. <p>All the relevant details can be found <a href="https://github.com/drk1wi/portspoof/blob/master/COPYING">here</a></p>
 
           &nbsp;
+
+</div>
+<hr class="large" />
+<div class="doc-section">
+<h3>Support</h3>
+<p>If you like Portspoof and would like to support this project then please aid me with a cup of coffee :) </p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" width="1" height="1">
+</form>
 
 </div>
 <hr class="large" />
